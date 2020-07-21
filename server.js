@@ -52,6 +52,8 @@ var data = new searchTerm({
 
 });
 
+ // working on second part:
+
 	// console.log(searchVal);
 
 	// console.log(offset);
