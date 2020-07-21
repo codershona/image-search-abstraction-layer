@@ -63,6 +63,9 @@ var data = new searchTerm({
 
 });
 
+// Save to searchTerm collection:
+
+
  data.save(err => {
 	if(err) {
 		res.send('Error Saving to database');
@@ -74,14 +77,37 @@ var data = new searchTerm({
 
 });
 
+// var searchOffset;
+
 
  // Bing data 2:
 
- // Bing.images 2
+ // Bing.images 2: Does offset exist
+
+ // if(offset) {
+
+ // 	if(offset==1) {
+
+ // 		offset=0;
+
+ // 		searchOffset = 1;
+
+ // 	}
+
+ // 	else if(offset>1) {
+ // 		searchOffset = offset +1;
+
+
+ // 	}
+ // }
+
+
 
  Bing.images(searchVal, {
-
  	top:10
+
+ 	//top:(10 * searchOffset),
+ 	// skip: (10 * offset)
 
 
  }, function(error, rez, body) {
