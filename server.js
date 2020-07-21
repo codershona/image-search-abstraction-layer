@@ -16,11 +16,37 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
+// Get call with required and not required params to do a search for an image:
+
+app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
+
+	var { searchVal } = req.params;
+
+	var {offset} = req.query;
+
+	// console.log(searchVal);
+
+	// console.log(offset);
+
+	return res.json({
+
+		searchVal,
+		offset
+
+
+	});
+    
+
+
+
+});
+
+
 
 
 
 app.listen(process.env.PORT || 3000, () => {
-	
+
 	console.log('Server is Running');
 
 });
