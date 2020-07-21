@@ -74,6 +74,24 @@ var data = new searchTerm({
 
 });
 
+
+ // Bing data 2:
+
+ // Bing.images 2
+
+ Bing.images(searchVal, {
+
+ 	top:10
+
+
+ }, function(error, rez, body) {
+
+ 	res.json(body);
+
+
+
+ });
+
  // working on second part:
 
 	// console.log(searchVal);
