@@ -69,7 +69,7 @@ var data = new searchTerm({
 
 	}
 
-	 res.json(data);
+	 // res.json(data);
 	// res.json({works: 'works'});
 
 });
@@ -86,8 +86,25 @@ var data = new searchTerm({
 
  }, function(error, rez, body) {
 
- 	res.json(body);
+ 	// res.json(body);
 
+ 	var bingData=[];
+
+ 	for(var i=0; i<10;i++) {
+ 		bingData.push({
+
+ 			url: body.value[i].webSearchUrl,
+
+ 			snippet: body.value[i].name,
+ 			thumbnail: body.value[i].thumbnailUrl,
+
+ 			context: body.value[i].hostPageDisplayUrl
+
+
+ 		});
+ 	}
+  
+  res.json(bingData);
 
 
  });
