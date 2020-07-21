@@ -21,10 +21,32 @@ app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/searchTerms')
 
+// (2ND API FOLLOW THIS) Get all search terms from the databases:
+
+app.get('/api/recentsearchs', (req, res, next) => {
+
+	searchTerm.find({}, (err, data) => {
+     
+     res.json(data);
+
+
+	});
 
 
 
-// Get call with required and not required params to do a search for an image:
+});
+
+
+
+// ====  API ===== 
+
+
+
+
+
+
+
+// (1st Api) Get call with required and not required params to do a search for an image:
 
 app.get('/api/imagesearch/:searchVal*', (req, res, next) => {
 
