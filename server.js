@@ -41,25 +41,28 @@ var data = new searchTerm({
 
 });
 
-data.save(err => {
+ data.save(err => {
 	if(err) {
 		res.send('Error Saving to database');
 
 	}
-	res.json(data);
-})
+
+	 res.json(data);
+	// res.json({works: 'works'});
+
+});
 
 	// console.log(searchVal);
 
 	// console.log(offset);
 
-	return res.json({
+	// return res.json({
 
-		searchVal,
-		offset
+	// 	searchVal,
+	// 	offset
 
 
-	});
+	// });
     
 
 
